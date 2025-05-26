@@ -1,8 +1,9 @@
 {
-  "name": "",
+  "name": "astro-blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+  "commit": "cz",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -19,10 +20,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "scripts": {
-  "commit": "cz",
-  "dev": "astro dev"
-}
+  }
 }
 
