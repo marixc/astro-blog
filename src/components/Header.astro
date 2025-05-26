@@ -1,0 +1,28 @@
+---
+import DarkMode from "./DarkMode.astro";
+import DropDown from "./DropDown.astro";
+---
+
+<header class="page-header header">
+  <nav>
+    <div class="hey">
+      <img src="../../public/logo_dark.svg" alt="" class="logo-dark" />
+      <img src="../../public/logo_light.svg" alt="" class="logo" />
+    </div>
+    <div class="internal-links">
+      <a href="about.html">About</a>
+      <a href="posts.html">Posts</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="hello">
+      <DarkMode />
+      <DropDown />
+      <div class="dropdown-menu">
+        <li><a href="/personal-blog/">Home</a></li>
+        <li><a href="/personal-blog/blog">Blog</a></li>
+        <li><a href="/personal-blog/about">About</a></li>
+        <li><a href="/personal-blog/tags">Tags</a></li>
+      </div>
+    </div>
+  </nav>
+</header>
