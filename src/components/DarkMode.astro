@@ -20,7 +20,7 @@
 
   const moonIcon = `
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-      <path fill="white" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      <path fill="#f2ecbc" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
     </svg>`;
 
   function detectColors() {
@@ -29,17 +29,17 @@
 
     if (localStorage.getItem("theme") === "dark") {
       document.body.setAttribute("theme", "dark");
-      modeIcon.innerHTML = moonIcon;
+      modeIcon.innerHTML = sunIcon;
     } else if (localStorage.getItem("theme") === "light") {
       document.body.setAttribute("theme", "light");
-      modeIcon.innerHTML = sunIcon;
+      modeIcon.innerHTML = moonIcon;
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.body.setAttribute("theme", "dark");
-      modeIcon.innerHTML = moonIcon;
+      modeIcon.innerHTML = sunIcon;
       localStorage.setItem("theme", "dark");
     } else {
       document.body.setAttribute("theme", "light");
-      modeIcon.innerHTML = sunIcon;
+      modeIcon.innerHTML = moonIcon;
       localStorage.setItem("theme", "light");
     }
   }
@@ -48,11 +48,11 @@
     const modeIcon = document.getElementById("mode-icon");
     if (document.body.getAttribute("theme") === "dark") {
       document.body.setAttribute("theme", "light");
-      modeIcon.innerHTML = sunIcon;
+      modeIcon.innerHTML = moonIcon;
       localStorage.setItem("theme", "light");
     } else {
       document.body.setAttribute("theme", "dark");
-      modeIcon.innerHTML = moonIcon;
+      modeIcon.innerHTML = sunIcon;
       localStorage.setItem("theme", "dark");
     }
   }
