@@ -6,23 +6,20 @@ import DropDown from "./DropDown.astro";
 <header class="page-header header">
   <nav>
     <div class="hey">
-      <img src="/astro-blog/logo_dark.svg" alt="" class="logo-dark" />
-      <img src="/astro-blog/logo_light.svg" alt="" class="logo" />
+      <a href="/astro-blog/" class="hey">
+        <img src="/astro-blog/logo_dark.svg" alt="" class="logo-dark" />
+        <img src="/astro-blog/logo_light.svg" alt="" class="logo" />
+      </a>
     </div>
+
     <div class="internal-links">
-      <a href="about.html">About</a>
-      <a href="posts.html">Posts</a>
-      <a href="contact.html">Contact</a>
+      <a href="/astro-blog/about.html">About</a>
+      <a href="/astro-blog/posts.html">Posts</a>
+      <a href="/astro-blog/contact.html">Contact</a>
     </div>
     <div class="hello">
       <DarkMode />
       <DropDown />
-      <div class="dropdown-menu">
-        <li><a href="/astro-blog/">Home</a></li>
-        <li><a href="/astro-blog/blog">Blog</a></li>
-        <li><a href="/astro-blog/about">About</a></li>
-        <li><a href="/astro-blog/tags">Tags</a></li>
-      </div>
     </div>
   </nav>
 </header>
