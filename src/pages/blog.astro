@@ -2,8 +2,6 @@
 import "../styles/global.css";
 import { getCollection } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = await getCollection("blog");
 ---

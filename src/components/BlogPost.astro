@@ -1,4 +1,40 @@
 ---
-const { title, url } = Astro.props
+const { title, url, image } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+
+<!-- TODO: how to implement the image -->
+<a class="card" href={url}>
+  <div class="content">
+    <h3>{title}</h3>
+    <p>hello</p>
+  </div>
+</a>
+
+<style>
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    transition: transform 0.2s ease;
+    margin: 9px;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    padding: 1em;
+  }
+  h3 {
+    margin: 0 0 0.5em;
+  }
+  p {
+    margin: 0;
+  }
+</style>
