@@ -9,17 +9,27 @@ const allPosts = await getCollection("blog");
 <BaseLayout>
   <h1>My Astro Blog</h1>
   <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    {
-      allPosts.map((post: any) => (
-        // <BlogPost url={post.url} title={post.frontmatter.title} />
-        <BlogPost
-          url={`/astro-blog/posts/${post.id}/`}
-          title={post.data.title}
-        />
-      ))
-    }
-  </ul>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <a href="test">hello</a>
+  <p>
+    This is where I will post about my journey learning Astro Lorem ipsum dolor
+    sit amet, consectetur adipisicing elit. Quos totam ipsa blanditiis
+    exercitationem asperiores? In, ea laboriosam facilis, corporis, quo
+    voluptatum sapiente fuga dolorum odit culpa aliquam voluptates praesentium
+    corrupti..
+  </p>
+  {
+    allPosts.map((post: any) => (
+      // <BlogPost url={post.url} title={post.frontmatter.title} />
+      <BlogPost
+        url={`/astro-blog/posts/${post.id}/`}
+        title={post.data.title}
+        image={post.data.image}
+      />
+    ))
+  }
   <script>
     document.querySelector(".hamburger")?.addEventListener("click", () => {
       document.querySelector(".nav-links")?.classList.toggle("expanded");

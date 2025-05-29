@@ -5,6 +5,7 @@ const { title, url, image } = Astro.props;
 <!-- TODO: how to implement the image -->
 <a class="card" href={url}>
   <div class="content">
+    <img src={image.url} alt={image.alt} />
     <h3>{title}</h3>
     <p>hello</p>
   </div>
@@ -17,7 +18,6 @@ const { title, url, image } = Astro.props;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 250px;
     transition: transform 0.2s ease;
     margin: 9px;
   }
@@ -25,8 +25,12 @@ const { title, url, image } = Astro.props;
     transform: scale(1.02);
   }
   img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Full width of parent */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Optional: Limit height to avoid huge images */
+    object-fit: cover; /* Optional: Crop instead of squish */
+    border-bottom: 1px solid #ddd; /* Optional visual polish */
+    display: block;
   }
   .content {
     padding: 1em;
