@@ -27,6 +27,7 @@ const { title, url, pubDate, description, tags, image } = Astro.props;
   .card {
     border: 1px solid #ccc;
     border-radius: 10px;
+    align-items: ce;
     overflow: hidden;
     display: block;
     transition: transform 0.2s ease;
@@ -69,5 +70,28 @@ const { title, url, pubDate, description, tags, image } = Astro.props;
 
   p {
     margin: 0;
+  }
+  @media (max-width: 600px) {
+    .card-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .thumbnail {
+      width: 90%; /* Smaller width than 100% */
+      max-width: 280px; /* Cap the size */
+      height: auto;
+      aspect-ratio: auto; /* Let image set its own height from width */
+      border-radius: 6px;
+    }
+
+    .text-content {
+      align-items: center;
+    }
+
+    #title {
+      font-size: 1.1em;
+    }
   }
 </style>
