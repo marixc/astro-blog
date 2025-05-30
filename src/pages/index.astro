@@ -1,13 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+
+// Fetch, sort, and format pubDate
+const recentPosts = (await getCollection("blog"))
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+  )
+  .slice(0, 3)
+  .map((post) => ({
+    ...post,
+    formattedDate: new Date(post.data.pubDate).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }),
+  }));
 ---
 
 <BaseLayout>
   <h1>marixc</h1>
   <p><i>Inspired by the kanagawa colors</i></p>
+
   <div class="bubble">
     My blog post is written in pure JavaScript to escape the web framework hell.
   </div>
+
   <h2 class="underl">Topics:</h2>
   <p>
     I mostly write about AI and related technologies like Machine Learning,
@@ -21,4 +41,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </p>
 
   <h2 class="underl">My most recent blogs:</h2>
+
+  <!-- Render top 3 recent posts -->
+  {
+    recentPosts.map((post) => (
+      <BlogPost
+        url={`/astro-blog/posts/${post.id}/`}
+        title={post.data.title}
+        image={post.data.image}
+        pubDate={post.formattedDate}
+        description={post.data.description}
+      />
+    ))
+  }
 </BaseLayout>

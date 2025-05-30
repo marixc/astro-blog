@@ -1,43 +1,72 @@
 ---
-const { title, url, image } = Astro.props;
+const { title, url, pubDate, description, tags, image } = Astro.props;
 ---
 
-<!-- TODO: how to implement the image -->
 <a class="card" href={url}>
-  <div class="content">
-    <img src={image.url} alt={image.alt} />
-    <h3>{title}</h3>
-    <p>hello</p>
+  <div class="card-content">
+    <img src={image.url} alt={image.alt} class="thumbnail" />
+    <div class="text-content">
+      <p id="title">{title}</p>
+      <p id="pdate">Published: {pubDate}</p>
+      <p>{description}</p>
+    </div>
   </div>
 </a>
 
 <style>
+  #title {
+    font-size: 20px;
+    color: yellow;
+    text-decoration: underline;
+  }
+  #pdate {
+    font-style: italic;
+    color: gray;
+    margin-bottom: 0.5em;
+  }
   .card {
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: block;
     transition: transform 0.2s ease;
-    margin: 9px;
+    margin-top: 9px;
+    text-decoration: none;
+    color: inherit;
   }
+
   .card:hover {
     transform: scale(1.02);
   }
-  img {
-    width: 100%; /* Full width of parent */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 200px; /* Optional: Limit height to avoid huge images */
-    object-fit: cover; /* Optional: Crop instead of squish */
-    border-bottom: 1px solid #ddd; /* Optional visual polish */
-    display: block;
-  }
-  .content {
+
+  .card-content {
+    display: flex;
+    align-items: flex-start;
     padding: 1em;
+    gap: 1em;
   }
+
+  .thumbnail {
+    width: 30%; /* Adjust based on layout */
+    aspect-ratio: 16 / 9; /* Maintain video-style aspect */
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    max-width: 300px; /* Prevent image from getting too large */
+  }
+
+  .text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   h3 {
     margin: 0 0 0.5em;
+    font-size: 1.2em;
   }
+
   p {
     margin: 0;
   }
