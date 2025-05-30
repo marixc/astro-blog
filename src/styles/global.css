@@ -128,7 +128,6 @@ body[theme="dark"] .logo-dark {
 	color: var(--text-color);
 	/* DodgerBlue or your preferred blue */
 	text-decoration: underline;
-	margin-left: 4px;
 	/* adds spacing from previous text */
 }
 
