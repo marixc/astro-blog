@@ -20,13 +20,12 @@ For the number 6:
 ```
 
 Divisors of 6 are:  
-- 6 ÷ 1 = 6  
-- 6 ÷ 2 = 3  
-- 6 ÷ 3 = 2  
+- 6 / 1 = 6  
+- 6 / 2 = 3  
+- 6 / 3 = 2  
 
 These divisors (1, 2, and 3) add up to 6 — so 6 is a perfect number.
 
----
 
 # The Basic Algorithm
 
@@ -67,7 +66,6 @@ while c < 5:  # find the first five perfect numbers
 
 This algorithm works fine for the first few perfect numbers, but it becomes very slow for larger ones (like the 5th perfect number: 33,550,336). Luckily, we can make this faster using **Mersenne Primes** and the **Euclid-Euler Theorem**.
 
----
 
 # Mersenne Primes & the Euclid-Euler Theorem
 
@@ -87,11 +85,11 @@ $$
 
 > And 2047 is **not** a prime number.
 
-So we need to check whether each \(2^k - 1\) is prime.
+So we need to check whether each $(2^k - 1)$ is prime. 
 
 ## Euclid-Euler Theorem
 
-Euclid proved that if \(2^k - 1\) is prime (a Mersenne prime), then:
+Euclid proved that if $(2^k - 1)$ is prime (a Mersenne prime), then:
 
 $$
 (2^{k-1}) \times (2^k - 1)
@@ -101,7 +99,6 @@ is a perfect number. This is known as the **Euclid-Euler Theorem**.
 
 Let’s use this to build a faster algorithm.
 
----
 
 ## Improved Algorithm Using Euclid-Euler Theorem
 
@@ -137,7 +134,6 @@ while count < 5:
 33550336 
 ```
 
----
 
 **Voilà!** With this optimized approach, finding large perfect numbers becomes significantly more efficient.
 

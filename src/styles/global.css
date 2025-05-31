@@ -118,7 +118,7 @@ body[theme="dark"] .logo-dark {
 /* singe ticks */
 code {
 	padding: 2px 5px;
-	background-color: white;
+	background-color: var(--buble);
 	border-radius: 2px;
 }
 
