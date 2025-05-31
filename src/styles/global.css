@@ -60,11 +60,6 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
-	/* To the new cow to keep the footer at the bottom */
-	/* min-height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: minmax(0, 1fr); */
 }
 
 #title {
@@ -133,9 +128,7 @@ pre>code {
 
 .bubble a {
 	color: var(--text-color);
-	/* DodgerBlue or your preferred blue */
 	text-decoration: underline;
-	/* adds spacing from previous text */
 }
 
 .mode-button {
@@ -151,12 +144,6 @@ pre>code {
 	cursor: pointer;
 }
 
-/* header {
-  background: var(--header-bg);
-  position: sticky;
-  margin: 0;
-  padding: 0;
-} */
 nav {
 	width: 900px;
 	max-width: calc(100% - 2em);
@@ -305,32 +292,17 @@ body {
 	flex-grow: 1;
 }
 
-/* asign style to top component instead of header */
-/* header {
-  background: var(--header-bg);
-  position: sticky;
-  top: 0;
-
-  backdrop-filter: blur(9px);
-  transition: background 0.3s ease-in-out;
-  border-bottom: 1px solid var(--header-border);
-} */
 .header {
 	background: var(--header-bg);
 	position: sticky;
 	top: 0;
-	/* box-shadow: 0 2px 8px rgba(var(--black), 5%); */
 	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(20px);
 	z-index: 1000;
-	/* Apply blur effect */
 	transition: background 0.3s ease-in-out;
-	/* Smooth transition */
 	/* border-bottom: 1px solid var(--header-border); */
 }
 
-/* .page-body p {
-  border: 1px solid grey;
-} */
 @media (max-width: 720px) {
 	.internal-links {
 		display: none;
