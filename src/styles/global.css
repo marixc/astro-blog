@@ -114,6 +114,24 @@ body[theme="dark"] .logo-dark {
 	padding: 0px;
 }
 
+/* md blocks */
+/* singe ticks */
+code {
+	padding: 2px 5px;
+	background-color: white;
+	border-radius: 2px;
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+pre>code {
+	all: unset;
+}
+
+
 .bubble {
 	background-color: var(--buble);
 	border-radius: 6px;

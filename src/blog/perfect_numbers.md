@@ -3,7 +3,7 @@ title: Perfect Numbers with Python
 author: Astro Learner
 description: "Find Perfect Numbers in a Split Second"
 image:
-  url: "https://docs.astro.build/default-og-image.png"
+  url: "/public/blog/perfect_nums.png"
   alt: "The word astro against an illustration of planets and stars."
 pubDate: 2025-05-30
 tags: ["python", "math"]
