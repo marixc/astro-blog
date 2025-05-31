@@ -39,17 +39,6 @@
 
 
 /* make footer stick */
-body {
-	background-color: var(--background-color);
-	color: var(--text-color);
-	margin: 0%;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Fira Sans';
-	line-height: 1.5;
-	/* This means 1.5 times the font size */
-}
 
 .footer {
 	margin-top: auto;
@@ -286,6 +275,14 @@ body {
 	/* font: 1.2em sans-serif; */
 }
 
+body {
+
+	background-color: var(--background-color);
+	color: var(--text-color);
+	font-family: 'Fira Sans';
+	line-height: 1.5;
+}
+
 .wrapper {
 	box-sizing: border-box;
 	min-height: 100%;
@@ -324,6 +321,7 @@ body {
 	top: 0;
 	/* box-shadow: 0 2px 8px rgba(var(--black), 5%); */
 	backdrop-filter: blur(9px);
+	z-index: 1000;
 	/* Apply blur effect */
 	transition: background 0.3s ease-in-out;
 	/* Smooth transition */
